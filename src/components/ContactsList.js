@@ -6,12 +6,11 @@ export default class ContactsList extends Component {
     render() {
         const {contacts} = this.props;
         return (
-                <ul>
+            <ul>
                 {contacts.map((itemContacts) =>
                     <ContactsItem key={itemContacts.id} item={itemContacts}/>
                 )}
-                </ul>
-
+            </ul>
         );
     }
 }
