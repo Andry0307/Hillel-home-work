@@ -1,16 +1,42 @@
 import React, {Component} from 'react';
 import ContactsItem from "./ContactsItem";
+import ContactsForm from "./ContactsForm";
 
 export default class ContactsList extends Component {
 
     render() {
-        const {contacts} = this.props;
+        const {contacts, onDelete, newContact, onChange,
+            onSubmit, showContact, showForm, isFormView,
+            editContact, isEditContact} = this.props;
         return (
-            <ul>
-                {contacts.map((itemContacts) =>
-                    <ContactsItem key={itemContacts.id} item={itemContacts}/>
+            <>
+            <div className='table-wd'>
+            <table className='table table-bordered '>
+                <thead>
+                <tr>
+                    <th>name</th>
+                    <th>surname</th>
+                    <th>phone</th>
+                    <th>age</th>
+                    <th>delete</th>
+                    <th>change</th>
+                </tr>
+                </thead>
+                {contacts.map((itemContact) =>
+                    <ContactsItem key={itemContact.id} item={itemContact}
+                                  onDelete={onDelete} showContact={showContact}
+                                  showForm={showForm}
+                    />
                 )}
-            </ul>
+            </table>
+                <button className='btn btn-success' onClick={showForm}>Add contact</button>
+            </div>
+            <ContactsForm newContact={newContact} onChange={onChange}
+                          onSubmit={onSubmit} isFormView={isFormView}
+                          editContact={editContact}
+                          isEditContact={isEditContact}
+            />
+            </>
         );
     }
 }

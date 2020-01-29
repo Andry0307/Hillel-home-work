@@ -9,3 +9,27 @@
 	list-style: inside;
 	margin-top: 5px;
 }
+
+.table-wd {
+	width: 50%;
+	float: left;
+	margin-top: 5px;
+}
+
+.main-component {
+	padding: 5px;
+}
+
+.contacts-form {
+	width: 45%;
+	float: right;
+}
+
+input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+tr {
+	cursor: pointer;
+}
