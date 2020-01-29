@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import propTypes from './propTypes.js';
 import ContactsItem from "./ContactsItem";
 import ContactsForm from "./ContactsForm";
 
@@ -40,4 +41,8 @@ export default class ContactsList extends Component {
         );
     }
 }
+
+ContactsList.propTypes = {
+    contacts: propTypes.contactItems.isRequired
+};
 

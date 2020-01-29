@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import propTypes from './propTypes.js';
 
 export default class ContactsItem extends Component {
 
@@ -29,8 +30,11 @@ export default class ContactsItem extends Component {
                 </td>
             </tr>
         </tbody>
-
         );
     }
 }
+ContactsItem.propsType = {
+    item: propTypes.contactItem.isRequired
+};
+
 

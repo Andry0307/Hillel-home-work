@@ -5,14 +5,16 @@ import ContactsList from "./components/ContactsList";
 import contacts from './contacts';
 
 export default class App extends Component {
+
+    clearForm = {
+        name: '',
+        surname: '',
+        phone: '',
+        age: ''
+    };
     state = {
         contacts: contacts,
-        newContact: {
-            name: '',
-            surname: '',
-            phone: '',
-            age: ''
-        },
+        newContact: this.clearForm,
         isFormView: false,
         isEditContact: false
     };
@@ -43,12 +45,7 @@ export default class App extends Component {
         });
         this.setState({
             contacts: newContact,
-            newContact: {
-                name: '',
-                surname: '',
-                phone: '',
-                age: ''
-            },
+            newContact: this.clearForm,
             isFormView: false,
             isEditContact: false
         })
@@ -69,12 +66,7 @@ export default class App extends Component {
                 {id: Date.now(),
                 ...newContact}
                 ],
-            newContact: {
-                name: '',
-                surname: '',
-                phone: '',
-                age: ''
-            },
+            newContact: this.clearForm,
             isFormView: false,
             isEditContact: false
         })
@@ -95,12 +87,7 @@ export default class App extends Component {
 
     onShowAddForm = () => {
         this.setState({
-            newContact: {
-                name: '',
-                surname: '',
-                phone: '',
-                age: ''
-            },
+            newContact: this.clearForm,
             isFormView: true,
             isEditContact: false
         })
