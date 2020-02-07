@@ -31,13 +31,7 @@ export default class App extends Component {
     onEditContact = (contact) => {
         const newContact = this.state.contacts.map((item)=>{
             if(item.id === contact.id){
-                return {
-                    id: contact.id,
-                    name: contact.name,
-                    surname: contact.surname,
-                    phone: contact.phone,
-                    age: contact.age
-                }
+                return contact;
             }else{
                 return item
             }
@@ -74,13 +68,7 @@ export default class App extends Component {
 
     onShowItemContact = (contact) => {
         this.setState({
-            newContact: {
-                id: contact.id,
-                name: contact.name,
-                surname: contact.surname,
-                phone: contact.phone,
-                age: contact.age
-            },
+            newContact: contact,
             isEditContact: true
         })
     };
